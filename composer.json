@@ -1,0 +1,22 @@
+{
+    "name": "i-am-piska/htdocs",
+    "description": "Description",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bipoliaro4ka",
+            "email": "doctor.who.rip@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}
