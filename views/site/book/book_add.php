@@ -5,7 +5,7 @@ use Src\Auth\Auth;
 ?>
 <div class="sidebar">
     <div class="sidebar-top">
-        <p class="logo"><img class="logo-img" src="../../../public/static/media/lib_logo.png" alt="logo-ico">Библиотека
+        <p class="logo"><img class="logo-img" src="/htdocs/public/static/media/lib_logo.png" alt="logo-ico">Библиотека
         </p>
         <nav>
             <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
@@ -20,12 +20,9 @@ use Src\Auth\Auth;
         </nav>
     </div>
     <div class="sidebar-bottom">
-        <a href="<?= app()->route->getUrl('/profile') ?>" class="sidebar-link sidebar-img-link"><img
-                    src="../../../public/static/media/profile_icon.svg"
-                    alt="profile-icon"><?= app()->auth::user()->name ?>
         </a>
         <a href="<?= app()->route->getUrl('/logout') ?>" class="sidebar-link sidebar-img-link"><img
-                    src="../../../public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>
+                    src="/htdocs/public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>
     </div>
 </div>
 <main>

@@ -22,27 +22,20 @@ use Src\Auth\Auth;
     <div class="sidebar-bottom">
         </a>
         <a href="<?= app()->route->getUrl('/logout') ?>" class="sidebar-link sidebar-img-link"><img
-                    src="/htdocs/public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>
+                    src="/htdocs/public/media/logout_icon.svg" alt="logout-icon">Выход</a>
     </div>
 </div>
 <main>
-    <h1>Выдача книги</h1>
-    <p><?=$error?></p>
+    <h1>Добавление зала</h1>
+    <p><?= $errors ?></p>
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <label for="book_id">Книга</label>
+        <label for="name">Номер зала</label>
+        <input type="number" name="number">
 
+        <label for="name">Назначение зала</label>
+        <input type="text" name="appointment">
 
-        <input name="book_id" id="book_id" type="text" list="books" placeholder="Выберите книгу">
-        <datalist id="books">
-            <?php
-            foreach ($book_list as $book){?>
-                <option value="<?= $book->book_id ?>"><?= $book->name ?></option>
-                <?php
-            }
-            ?>
-        </datalist>
         <button class="submit-btn">Добавить</button>
     </form>
-
 </main>

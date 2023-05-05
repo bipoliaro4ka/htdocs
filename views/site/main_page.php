@@ -20,9 +20,6 @@ use Src\Auth\Auth;
         </nav>
     </div>
     <div class="sidebar-bottom">
-        <a href="<?= app()->route->getUrl('/profile') ?>" class="sidebar-link sidebar-img-link"><img
-                    src="../../../public/static/media/profile_icon.svg"
-                    alt="profile-icon"><?= app()->auth::user()->name ?>
         </a>
         <a href="<?= app()->route->getUrl('/logout') ?>" class="sidebar-link sidebar-img-link"><img
                     src="../../../public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>

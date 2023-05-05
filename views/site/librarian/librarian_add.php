@@ -26,23 +26,19 @@ use Src\Auth\Auth;
     </div>
 </div>
 <main>
-    <h1>Выдача книги</h1>
-    <p><?=$error?></p>
+    <h1>Добавление библиотекаря</h1>
+    <p><?= $errors?></p>
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <label for="book_id">Книга</label>
+        <label for="name">ФИО</label>
+        <input type="text" name="name">
 
+        <label for="name">Логин</label>
+        <input type="text" name="login">
 
-        <input name="book_id" id="book_id" type="text" list="books" placeholder="Выберите книгу">
-        <datalist id="books">
-            <?php
-            foreach ($book_list as $book){?>
-                <option value="<?= $book->book_id ?>"><?= $book->name ?></option>
-                <?php
-            }
-            ?>
-        </datalist>
+        <label for="password">Пароль</label>
+        <input type="password" name="password">
+
         <button class="submit-btn">Добавить</button>
     </form>
-
 </main>

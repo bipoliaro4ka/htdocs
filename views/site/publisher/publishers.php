@@ -25,24 +25,31 @@ use Src\Auth\Auth;
                     src="/htdocs/public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>
     </div>
 </div>
-<main>
-    <h1>Выдача книги</h1>
-    <p><?=$error?></p>
-    <form method="post">
-        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <label for="book_id">Книга</label>
 
+<div class="main">
+    <div class="search"><input type="text" name="search" class="seacrh-from"><img
+            src="/htdocs/public/static/media/search_icon.svg" alt="search">
+    </div>
 
-        <input name="book_id" id="book_id" type="text" list="books" placeholder="Выберите книгу">
-        <datalist id="books">
-            <?php
-            foreach ($book_list as $book){?>
-                <option value="<?= $book->book_id ?>"><?= $book->name ?></option>
-                <?php
-            }
+    <h1>Список издательств</h1>
+    <a href="<?= app()->route->getUrl('/publisher-add') ?>">
+        Добавить издательство
+    </a>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($publisher_list as $publisher){
             ?>
-        </datalist>
-        <button class="submit-btn">Добавить</button>
-    </form>
-
-</main>
+        <tr>
+            <td><?= $publisher->name ?></td>
+        </tr>
+        <?php
+        }
+        ?>
+    </table>
+</div>
