@@ -25,37 +25,27 @@ use Src\Auth\Auth;
                     src="/htdocs/public/static/media/logout_icon.svg" alt="logout-icon">Выход</a>
     </div>
 </div>
-
 <main>
-    <div class="search"><input type="text" name="search" class="seacrh-from"><img
-                src="/htdocs/public/static/media/search_icon.svg" alt="search">
-    </div>
+    <p><?= $errors?></p>
 
-    <h1>Главная</h1>
-    <p class="txt">На главной странице представлены наиболее популярные книги</p>
-    <div class="popular-book-list"
-        <?php
-        foreach ($book_list
+    <h1>Добавление книги</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="name">Название</label>
+        <input type="text" name="name" id="name" placeholder="Название книги">
+        <label for="author">Автор</label>
+        <select class="form-select" aria-label="" name="author_id">
+            <option selected>Выберете автора</option>
+            <?php
 
-        as $book){
-        ?>
-    >
-        <div class="popular-book-list-itm">
-            <p class="title"><?= $book->name ?></p>
-            <div class="half-block">
-                <div>
-                    <p class="subtitle"><?= $book->author ?></p>
-                    <p class="subtitle"><?= $book->date_publish ?></p>
-                </div>
-                <p class="price"><?= $book->price ?></p>
-            </div>
-            <div class="bottom-block">
-                <a class="annotation-btn" href="books/?id=<?= $book->book_id ?>">Перейти к аннотации -></a>
-            </div>
-        </div>
+            foreach ($author_list as $author) {?>
+                <option value="<?= $author->author_id ?>"><?= $author->name ?></option>
+                <?php
+            }
+            ?>
+        </select>
 
-        <?php
-        }
-        ?>
-    </div>
+        <input type="file" name="cover_file">
+        <button class="submit-btn">Добавить</button>
+    </form>
+
 </main>

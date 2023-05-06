@@ -38,6 +38,8 @@ use Src\Auth\Auth;
 
     <a href="<?= app()->route->getUrl('/book-add') ?>">Добавить книгу</a>
 
+    <a href="<?= app()->route->getUrl('/give-book') ?>">Выдать книгу</a>
+
     <table class="table">
         <thead>
         <tr>

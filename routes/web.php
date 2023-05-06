@@ -44,3 +44,6 @@ Route::add(['GET', 'POST'], '/reader-book', [Controller\ReaderView::class, 'book
     ->middleware('auth', 'can:lib|admin');
 Route::add(['GET', 'POST'], '/book-delete', [Controller\BookView::class, 'delete_book'])
     ->middleware('auth', 'can:lib|admin');
+
+ Route::add(['GET', 'POST'], '/give-book', [Controller\GiveView::class, 'give_book'])
+    ->middleware('auth', 'can:admin|lib');

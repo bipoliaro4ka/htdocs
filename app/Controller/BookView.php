@@ -53,7 +53,7 @@ class BookView
         $publisher_list = Publisher::all();
 
         if ($request->method === "POST") {
-            $path = '../public/static/media/covers/';
+            $path = '/htdocs/public/static/media/covers/';
 
             if (Book::create([
                 'name' => str($request->name),
@@ -90,7 +90,7 @@ class BookView
 
         if ($request->method == "POST") {
 
-            $path = '../public/static/media/covers/';
+            $path = '/htdocs/public/static/media/covers/';
             $storage = new \Upload\Storage\FileSystem($path);
             $file = new \Upload\File('cover_file', $storage);
 
